@@ -97,4 +97,4 @@ async function main(begin, end) {
   }
 }
 
-module.exports = { main, processTimeSeriesData };
+module.exports = { main };

@@ -152,3 +152,66 @@ test("Test with a five-year range", async () => {
   expect(indexOutputLine[0]).toBe(apiDataLine[0]);
   expect(Number(indexOutputLine[1])).toBeCloseTo(Number(apiDataLine[1]), 3);
 }, 150000);
+
+test("Test exit when not enough arguments", async () => {
+  console.log("Not enough arguments");
+
+  try {
+    await execAsync("node src/index.js");
+  } catch (error) {
+    expect(true);
+  }
+  try {
+    await execAsync("node src/index.js 2021-03-04T03:00:00Z");
+  } catch (error) {
+    expect(true);
+  }
+});
+
+test("Test exit when timestamps not formatted correctly", async () => {
+  console.log("Timestamps not formatted correctly");
+
+  try {
+    await execAsync("node src/index.js 03:00:00 11:00:00");
+  } catch (error) {
+    expect(true);
+  }
+});
+
+test("Test exit when end is before begin", async () => {
+  console.log("End before begin");
+
+  try {
+    await execAsync(
+      "node src/index.js 2021-03-04T03:00:00Z 2021-03-04T03:00:00Z"
+    );
+  } catch (error) {
+    expect(true);
+  }
+  try {
+    await execAsync(
+      "node src/index.js 2021-03-05T03:00:00Z 2021-03-04T03:00:00Z"
+    );
+  } catch (error) {
+    expect(true);
+  }
+});
+
+test("Test exit when begin and end timestamps not whole hours", async () => {
+  console.log("Timestamps not whole hours");
+
+  try {
+    await execAsync(
+      "node src/index.js 2021-03-05T03:30:00Z 2021-03-04T11:00:00Z"
+    );
+  } catch (error) {
+    expect(true);
+  }
+  try {
+    await execAsync(
+      "node src/index.js 2021-03-05T03:00:00Z 2021-03-04T11:45:00Z"
+    );
+  } catch (error) {
+    expect(true);
+  }
+});

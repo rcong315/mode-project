@@ -5,7 +5,7 @@ async function parseArgs(argv) {
   // Parse command-line arguments
 
   if (argv.length < 4) {
-    console.log("Usage: node data.js <BEGIN_TIMESTAMP> <END_TIMESTAMP>");
+    console.error("Error: node src/index.js <BEGIN_TIMESTAMP> <END_TIMESTAMP>");
     process.exit(1);
   }
 
