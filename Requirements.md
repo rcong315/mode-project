@@ -1,30 +1,3 @@
-# MODE Coding Exercise
-
-Thank you for taking the time to work on this coding exercise.
-
-To kick off the interview process, we'd like to evaluate your fundamental coding skills. Our engineers will review your
-code for correctness, efficiency and readability. This exercise should not take more than a few hours to finish.
-
-After completing the exercise, please check your code into a repo under your personal GitHub account. (Please keep this
-repo **private** to maintain the confidentiality of this process.)
-Please also add the GitHub user [`tinkermode`](https://github.com/tinkermode) as a collaborator of your private repo.
-This gives our team access to your code.
-
-In our previous email to you, you should find a submission link at the end. Click the link to open the submission form.
-Copy and paste your repo URL into the "Notes" section of the form and submit. Our team will be notified to review your
-answers.
-
-Normally, we expect candidates to submit their answers within 24 hours of receiving the exercise. If you have questions
-about this exercise, or need additional time due to unforeseen circumstances, feel free to contact us.
-
-Thank you again for your time. Good luck!
-
-*&mdash;The MODE team*
-
-<hr>
-
-## The Question
-
 We have a web server that returns values from an arbitrary time series. For example, if you make a `GET` request to the
 following URL:
 
