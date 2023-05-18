@@ -1,6 +1,3 @@
-# Richard Cong May 4, 2023 
-## MODE Coding Exercise
-
 ### To run:
 ```
 npm start <begin> <end>
